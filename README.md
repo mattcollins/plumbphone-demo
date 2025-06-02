@@ -39,5 +39,9 @@ Demo video: https://x.com/mattcollinsuk/status/1929515238233129280
 ### SMS Sender
 
 - Type: integrated via Zapier MCP server
-- Purpose: used to escalate issues that can't be handled by the agent to the plumber
-- Notes: uses Twilio's SMS-sending
+- Purpose: used to send brief messages to the plumber (via Twilio's SMS sending service)
+
+## Error Handling / Fallback
+
+The agent is encouraged to text the plumber in the case of any enquiries it's
+not sure how to handle.
