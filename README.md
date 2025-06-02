@@ -14,34 +14,40 @@ Demo video: https://x.com/mattcollinsuk/status/1929515238233129280
 
 ## Tools
 
-### Google Calendar Check Availability
+### Built-In Vapi Tools
 
-- Type: built-in Vapi tool
-- Purpose: checks when the plumber is available
+#### Google Calendar Check Availability
 
-### Google Calendar Event Creation
+This is used to check when the plumber is available.
 
-- Type: built-in Vapi tool
-- Purpose: books customer visits into the plumber's calendar
+#### Google Calendar Event Creation
 
-### Google Maps Address Validation
+This is used to book customer visits into the plumber's calendar.
 
-- Type: integrated via Cloudflare-hosted custom MCP server
-- Purpose: used to check that a customer's address has been transcribed
-  correctly
+### Tools Integrated via MCP Servers
 
-### Google Maps Distance Calculation
+#### Google Maps Address Validation
 
-- Type: integrated via Cloudflare-hosted custom MCP server
-- Purpose: used to check whether a customer's address is within the plumber's service
-  area
+This is integrated via a custom MCP server running on Cloudflare. It calls the
+Google Maps Address Validation API.
 
-### SMS Sender
+It is used to validate a customer's address in case it has been transcribed incorrectly.
 
-- Type: integrated via Zapier MCP server
-- Purpose: used to send brief messages to the plumber (via Twilio's SMS sending service)
+#### Google Maps Distance Calculation
+
+This is integrated via the same customer MCP server as the address validation
+tool above. It calls the Google Maps Routes API.
+
+It is used to check whether a customer's address is within the plumber's
+service area.
+
+#### SMS Sender
+
+This is integrated via the Zapier MCP server and uses the Twilio SMS sending service.
+
+It is used to send brief messages to the plumber as required.
 
 ## Error Handling / Fallback
 
-The agent is encouraged to text the plumber in the case of any enquiries it's
-not sure how to handle.
+The agent is encouraged to send the plumber an SMS in the case of any enquiry it
+is not sure how to handle.
